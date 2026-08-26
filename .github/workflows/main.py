@@ -1,21 +1,9 @@
-name: Build APK
+from kivy.app import App
+from kivy.uix.label import Label
 
-on: push
+class WifiApp(App):
+    def build(self):
+        return Label(text="WiFi Scanner")
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-      - name: Install buildozer
-        run: pip install buildozer
-      - name: Build APK
-        run: buildozer android debug deploy run
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: wifi-tool
-          path: bin/*.apk
+if __name__ == "__main__":
+    WifiApp().run()
