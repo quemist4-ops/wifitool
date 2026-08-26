@@ -7,6 +7,11 @@ This .spec config file tells Buildozer an app's requirements for being built.
 
 # (str) Title of your application
 title = WifiTool
+android.accept_sdk_license = True
+android.sdk_path = /usr/lib/android-sdk
+android.ndk_path = /usr/lib/android-ndk
+android.ant_path = /usr/share/ant
+android.gradle_dependencies =
 
 # (str) Package name
 package.name = wifitool
